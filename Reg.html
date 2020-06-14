@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <meta charset="UTF-8"> 
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="css/bootstrap.min.css">
+         <title>Registration form</title>
+         <link rel="stylesheet" href="Reg.css">
+    </head>
+    <body>
+        <script>
+            function valid()
+            {
+                
+                var name=document.getElementById("fname").value;
+                var lname=document.getElementById("lme").value;
+                var email=document.getElementById("email").value;
+                var password=document.getElementById("pwd").value;
+                var cnfpassword=document.getElementById("cnfp").value;
+                var gender=document.getElementsByName('gender').value;
+                var message="";
+                
+                if(name=="")
+                {
+                    message += "Enter your first name\n";
+                
+                
+                }
+                
+                if(lname=="")
+                {
+                    message += "Enter your last name\n";
+                
+                }
+                if(email=="")
+                {
+                    message += "Enter email\n";
+                
+                }
+                if(password=="")
+                {
+                    message += "Enter password\n";
+                
+                }
+                if(cnfpassword=="" )
+                {
+                    message += "Please Enter Confirm  password\n";
+                
+                }
+                if(cnfpassword!="" && cnfpassword!=password)
+                {
+                    message += "Your confirm password doesn't match ";
+                }
+                
+
+                if(message)
+                {
+                    alert(message);
+                    return false;
+                }
+               
+            
+            }
+        </script>
+        <form method="POST" action="menu.html" name="Login" enctype="multipart/form-data" onsubmit="return valid();">
+        
+        <table border="0">
+            <tr>
+                <td>first name</td>
+                <td><input type="text" name="First name" placeholder="" id="fname"></td>
+            </tr>
+            <tr>
+            <td>Last name</td><td> <input type="text" name="last name" placeholder="" id="lme"></td>
+           </tr>
+         <tr>
+<td>Email id </td><td><input type="email" name="email" placeholder="" id="email"></td>
+</tr><tr>
+<td>Password</td><td> <input type="password" name="password" placeholder="" value="" id="pwd"></td>
+</tr><tr>
+<td>Conform password</td><td> <input type="password" name="password" placeholder="" value="" id="cnfp"></td>
+</tr>
+<tr>
+<td>Gender</td><td><input type="radio" name="gender"  value="Male">Male
+<input type="radio" name="gender" value="Female">Female</td>
+</tr><tr>
+<td>Hobbies</td><td> <input type="checkbox" name="Hobbies" value="playing">playing
+<input type="checkbox" name="Hobbies" value="Singing">singing
+<input type="checkbox" name="Hobbies" value="reading">reading
+<input type="checkbox" name="Hobbies" value="danceing">danceing</td>
+</tr><tr>
+<td>Contect number</td><td> <input type="number" name="contect number" placeholder="Enter contect number"id="ph" value=""></td>
+</tr><tr>
+<td>Date of birth</td><td> <input type="date" name="date of birth" placeholder="dd/mm/yyyy" value=""></td>
+</tr><tr>
+<td>Address</td><td><textarea rows="5" cols="20" name="Enter address" ></textarea></td>
+</tr><tr>
+<td>Image</td><td> <input type="file" name="img"</td>
+</tr><tr>
+<td><input type="Submit" name="Submit" value="Submit"></td></tr>
+        
+
+        <script src="js/bootstrap.min.js"></script>
+        </table>
+        </form>
+    </body>
